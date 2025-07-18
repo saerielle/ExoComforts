@@ -21,4 +21,4 @@ A set of small, modular QoL tweaks: skip the intro dream, see birthday bubbles w
 * **Skill Stories Highlights**: All befriendable characters as well as mom and dad have extra mini-stories that are accessible when you reach a certain skill threshold. This patch creates a conversation bubble above their heads when you reach said thresholds, so there is no need to run around checking those :) Currently only supports base game characters.
 
 ## Download
-https://github.com/saerielle/ExoComfort/releases
+https://github.com/saerielle/ExoComforts/releases
