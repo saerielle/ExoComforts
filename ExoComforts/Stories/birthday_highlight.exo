@@ -1,0 +1,481 @@
+// As long as you know someone's birthday and have not gifted them anything yet on that day, they'll have a bubble over their head
+
+=== calBirthday ==============================================
+	~if chara = high_cal
+	~if call_charaBirthday(cal)
+	~if call_canGift(cal)
+	~if hog_fact_cal_birthday
+	~if mem_foundCollectible
+	~if love_cal < 100
+	~if story_calBirthday > 1 || !story_calBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Cal's birthday today - he's turning [=call_charaAge(cal)]! You should totally surprise him with something fun!
+
+	[else if age <= 16]
+		It's Cal's birthday - [=call_charaAge(cal)] years old today. He's all smiles, like it's the best day ever. You're thinking about what to get him.
+
+	[else]
+		It's Cal's birthday today. [=call_charaAge(cal)] already! He's in the garden, looking extra chipper. Maybe a gift would make it even better.
+
+	[end]
+
+	// This is spaghet, I know :)
+	[if hog_fact_cal_likes_cake && hog_fact_cal_likes_egg && hog_fact_cal_likes_fruit]
+		You know Cal adores Cake, and he's just as into Blue Bobberfruits and Red Xeno Eggs - food or maybe a pet? Either way, it's a win.
+
+	[else if hog_fact_cal_likes_cake && hog_fact_cal_likes_fruit]
+		You know Cal adores Cake and has a soft spot for Blue Bobberfruits! Basically, if it's a food, he's game!
+
+	[else if hog_fact_cal_likes_cake && hog_fact_cal_likes_egg]
+		You know Cal adores Cake and has a soft spot for Red Xeno Eggs. That gives you some ideas.
+
+	[else if hog_fact_cal_likes_egg && hog_fact_cal_likes_fruit]
+		You know Cal has a soft spot for Red Xeno Eggs and Blue Bobberfruits - he'd definitely light up if you brought either.
+
+	[else if hog_fact_cal_likes_cake]
+		Cal really seems to love cake. Like, _really_ love cake.
+
+	[else if hog_fact_cal_likes_egg]
+		You're pretty sure Cal likes Red Xeno Eggs. He thinks he might hatch one someday!
+
+	[else if hog_fact_cal_likes_fruit]
+		You're pretty sure Cal likes Blue Bobberfruits - or honestly, anything edible. The guy's always hungry.
+
+	[else]
+		You're not exactly sure what Cal would want... but knowing him, he'd probably be stoked about anything edible, honestly.
+
+	[end]
+
+	* Walk up to Cal
+		~call story(calRepeat)
+
+	* Maybe later
+
+=== anemoneBirthday ==============================================
+	~if chara = high_anemone
+	~if call_charaBirthday(anemone)
+	~if call_canGift(anemone)
+	~if hog_fact_anemone_birthday
+	~if love_anemone < 100
+	~if mem_foundCollectible
+	~if story_anemoneBirthday > 1 || !story_anemoneBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age < 15]
+		Isn't today [=mem_anemoneNick]'s birthday? She's turning [=call_charaAge(anemone)]! You wonder if she'd let you tackle-hug her with a gift.
+
+	[else if age == 15]
+		It's [=mem_anemoneNick]'s birthday today. She's turning [=call_charaAge(anemone)]... It might not feel like much of a celebration this year, but you still want to show her you care.
+
+	[else]
+		[=mem_anemoneNick]'s birthday rolls around again. She's [=call_charaAge(anemone)] now. Even if she plays it cool, you feel like it matters more than she lets on.
+
+	[end]
+
+	// Oh, thank you, Anemone, you only have one like and one dislike!
+	[if hog_fact_anemone_likes_egg]
+		You remember - she's got a thing for Red Xeno Eggs. Maybe that's the way to her heart today.
+		[if hog_fact_anemone_dislikes_crystal]
+			Just not Crystal Clusters. You're pretty sure she'd hate those.
+		[end]
+		Cake sounds like a safe bet, too. Who doesn't like cake?
+
+	[else if hog_fact_anemone_dislikes_crystal]
+		You're not sure what she'd enjoy, but you're pretty sure Crystal Clusters are off the list. Maybe Cake is a good idea?
+
+	[else]
+		You're not sure what [=mem_anemoneNick] would want - but come on, who doesn't like Cake?
+
+	[end]
+
+	* Walk up to [=mem_anemoneNick]
+		~call story(anemoneRepeat)
+
+	* Maybe later
+
+
+=== dysBirthday ==============================================
+	~if chara = high_dys
+	~if call_charaBirthday(dys)
+	~if call_canGift(dys)
+	~if hog_fact_dys_birthday
+	~if mem_foundCollectible
+	~if love_dys < 100
+	~if story_dysBirthday > 1 || !story_dysBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Dys's birthday today. You're not sure he'd _want_ anyone to know, but... it feels weird not to do anything. [=call_charaAge(dys)] is a big deal, right?
+
+	[else if age <= 16]
+		It's Dys's birthday today. He's [=call_charaAge(dys)] now. You're pretty sure he'd hate a surprise party or anything loud - but still... it feels weird not doing anything.
+
+	[else]
+		You glance at the date on your holopalm and pause. It's Dys's birthday. He's [=call_charaAge(dys)] today, but if he's anything like usual, he'd probably rather forget it.
+
+
+		Still...
+
+	[end]
+
+	[if hog_fact_dys_likes_device && hog_fact_dys_likes_roots]
+		You know Dys has a thing for Strange Devices - and he seems to like Medicinal Roots, too. Maybe one of those would go over okay... if you keep it low-key.
+
+		[if hog_fact_dys_dislikes_cake]
+			Definitely not Cake, though. That'd be, like, the worst possible choice.
+
+		[end]
+
+	[else if hog_fact_dys_likes_device]
+		You know he likes messing with Strange Devices. If you wrapped something like that in silence, maybe he'd appreciate it.
+
+		[if hog_fact_dys_dislikes_cake]
+			Definitely not Cake, though. That'd be, like, the worst possible choice.
+
+		[end]
+
+	[else if hog_fact_dys_likes_roots]
+		You're pretty sure he likes Medicinal Roots - it's the kind of thing he'd actually keep, instead of throwing in the trash.
+
+		[if hog_fact_dys_dislikes_cake]
+			Definitely not Cake, though. That'd be, like, the worst possible choice.
+
+		[end]
+
+	[else if hog_fact_dys_dislikes_cake]
+		You definitely know not to bring Cake. That would just make everything worse.
+
+	[else]
+		You're not sure what Dys would want - or if he'd even want anything. But maybe... it's the thought that counts?
+
+	[end]
+
+	* Walk up to Dys
+		~call story(dysRepeat)
+
+	* Maybe later
+
+		
+=== marzBirthday ==============================================
+	~if chara = high_marz
+	~if call_charaBirthday(marz)
+	~if call_canGift(marz)
+	~if hog_fact_marz_birthday
+	~if mem_foundCollectible
+	~if love_marz < 100
+	~if story_marzBirthday > 1 || !story_marzBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Marz's birthday today! She's turning [=call_charaAge(marz)] - you should totally bring her something shiny or sweet before she starts holding court.
+
+	[else if age <= 16]
+		Today's Marz's birthday - she's [=call_charaAge(marz)] now. She probably expects a parade, but a well-chosen gift might impress her just as much.
+
+	[else]
+		Marz's birthday again, huh? She's turning [=call_charaAge(marz)]. Whether she tells you or not, she absolutely wants to be celebrated.
+
+	[end]
+
+	// This is spaghet, I know :)
+	[if hog_fact_marz_likes_crystal && hog_fact_marz_likes_yellowflower]
+		You know she absolutely adores Yellow Flowers, and Crystal Clusters always catch her eye. Or maybe Cake?
+
+	[else if hog_fact_marz_likes_yellowflower]
+		You're pretty sure Marz adores Yellow Flowers. Classic, stylish, and totally her vibe. Cake is a safe bet, too. Who doesn't like cake?
+
+	[else if hog_fact_marz_likes_crystal]
+		You know Marz has a thing for Crystal Clusters. Maybe that's the way to her heart today. Cake is also an option, as long as it looks presentable.
+
+	[else]
+		You're not sure what Marz would want - but she seems like the type who'd appreciate something elegant. Or Cake. Definitely Cake.
+
+	[end]
+
+	// Why do I do this to myself instead of using inline ifs? Some people like to see the world burn ;)
+	[if hog_fact_marz_dislikes_roots && hog_fact_marz_dislikes_wood && hog_fact_marz_dislikes_egg]
+		Just... maybe skip anything gross. You're almost certain she'd wrinkle her nose at Mushwood Logs, Medicinal Roots, and Red Xeno Eggs.
+
+	[else if hog_fact_marz_dislikes_roots && hog_fact_marz_dislikes_wood]
+		Just... maybe skip anything gross. You're almost certain she'd wrinkle her nose at Mushwood Logs and Medicinal Roots.
+
+	[else if hog_fact_marz_dislikes_wood && hog_fact_marz_dislikes_egg]
+		Just... maybe skip anything gross. You're almost certain she'd wrinkle her nose at Mushwood Logs and Red Xeno Eggs.
+
+	[else if hog_fact_marz_dislikes_roots && hog_fact_marz_dislikes_egg]
+		Just... maybe skip anything gross. You're almost certain she'd wrinkle her nose at Medicinal Roots and Red Xeno Eggs.
+
+	[else if hog_fact_marz_dislikes_roots]
+		Just... maybe skip anything gross. You're almost certain she'd wrinkle her nose at Medicinal Roots.
+
+	[else if hog_fact_marz_dislikes_wood]
+		Just... maybe skip anything gross. You're almost certain she'd wrinkle her nose at Mushwood Logs.
+
+	[else if hog_fact_marz_dislikes_egg]
+		Just... maybe skip anything gross. You're almost certain she'd wrinkle her nose at Red Xeno Eggs.
+
+	[end]
+
+	* Walk up to Marz
+		~call story(marzRepeat)
+
+	* Maybe later
+
+=== nomiBirthday ==============================================
+	~if chara = high_nomi
+	~if call_charaBirthday(nomi)
+	~if call_canGift(nomi)
+	~if hog_fact_nomi_birthday
+	~if mem_foundCollectible
+	~if love_nomi < 100
+	~if story_nomiBirthday > 1 || !story_nomiBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 16]
+		It's Nomi-Nomi's birthday today - they're turning [=call_charaAge(nomi)]! You wonder if they'd like a shiny surprise... or maybe just something totally weird and cool.
+
+	[else]
+		You double-check your holopalm and yep - it's Nomi's birthday. They're [=call_charaAge(nomi)] now, and you're already brainstorming something worthy of their... unique style!
+
+	[end]
+
+	[if hog_fact_nomi_likes_crystal && hog_fact_nomi_likes_device]
+		You know Nomi's totally into Crystal Clusters and Strange Devices - bonus points if it beeps or glows.
+
+	[else if hog_fact_nomi_likes_crystal]
+		You know Nomi's eyes sparkle for Crystal Clusters. They'd definitely appreciate something that catches the light just right.
+
+	[else if hog_fact_nomi_likes_device]
+		You know Nomi's into Strange Devices. Definitely a safe bet if you want to make them smile.
+
+	[else]
+		You have no idea what Nomi-Nomi likes... but it's their birthday. Cake is basically a universal language, right?
+
+	[end]
+
+	[if hog_fact_nomi_dislikes_roots]
+		Just... maybe skip the Medicinal Roots. Not their vibe.
+
+	[end]
+
+	* Walk up to Nomi-Nomi
+		~call story(nomiRepeat)
+
+	* Maybe later
+
+=== rexBirthday ==============================================
+	~if chara = high_rex
+	~if call_charaBirthday(rex)
+	~if call_canGift(rex)
+	~if hog_fact_rex_birthday
+	~if mem_foundCollectible
+	~if love_rex < 100
+	~if story_rexBirthday > 1 || !story_rexBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 16]
+		Today's Rex's birthday - he's turning [=call_charaAge(rex)]! You spot him grinning like it's just another excuse for fun, and you feel like maybe he deserves a surprise.
+
+	[else]
+		You spot the date on your holopalm and grin - it's Rex's birthday today. He's [=call_charaAge(rex)] now, and if anyone deserves a little fuss, it's him.
+
+	[end]
+
+	[if hog_fact_rex_likes_wood && hog_fact_rex_likes_cake]
+		You know Rex has a huge soft spot for Cake, and he's always collecting Mushwood Logs like it's treasure - a birthday gift in either category would probably get you a bone-crushing hug.
+
+	[else if hog_fact_rex_likes_wood]
+		You know Rex loves Mushwood Logs. There's something about the texture, or maybe he just likes building _everything_ with them.
+
+	[else if hog_fact_rex_likes_cake]
+		You know for sure Rex lights up at the sight of Cake. It's a sweet treat for a sweet guy.
+
+	[else]
+		You're not totally sure what Rex would want - but he strikes you as the kind of guy who'd be thrilled with just about anything, especially if it came with a hug.
+
+	[end]
+
+
+	* Walk up to Rex
+		~call story(rexRepeat)
+
+	* Maybe later
+
+=== tammyBirthday ==============================================
+	~if chara = high_tammy
+	~if call_charaBirthday(tammy)
+	~if call_canGift(tammy)
+	~if hog_fact_tammy_birthday
+	~if mem_foundCollectible
+	~if love_tammy < 100
+	~if story_tammyBirthday > 1 || !story_tammyBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Tammy's birthday today - she's turning [=call_charaAge(tammy)]! You have to find something cute to give her!
+
+	[else if age <= 16]
+		You remember just in time - today is Tammy's birthday. She's [=call_charaAge(tammy)] now. She probably won't mention it unless someone else does... maybe you could do something sweet for her?
+
+	[else]
+		You remember - it's Tammy's birthday today. She's [=call_charaAge(tammy)] now. She probably wouldn't expect anything, but you'd like to show her you care.
+
+	[end]
+
+	// Oh, thank you, Tammy, you only have one like and one dislike!
+	[if hog_fact_tammy_likes_yellowflower]
+		You know Tammy loves Yellow Flowers - they're her favorite color, after all. And considering how often she bakes Cakes for others, she might enjoy getting one herself for once.
+
+	[else if hog_fact_tammy_dislikes_wood]
+		You remember she once flinched at the smell of Mushwood Logs - maybe steer clear of that.
+
+		You do not know if she likes or dislikes anything else, but Tammy always bakes Cakes for other people... maybe she'd enjoy one gifted to her for a change?
+	[else]
+		Tammy always bakes Cakes for other people... maybe she'd enjoy one gifted to her for a change?
+
+	[end]
+
+	* Walk up to Tammy
+		~call story(tammyRepeat)
+
+	* Maybe later
+		
+=== tangBirthday ==============================================
+	~if chara = high_tang
+	~if call_charaBirthday(tang)
+	~if call_canGift(tang)
+	~if hog_fact_tang_birthday
+	~if mem_foundCollectible
+	~if love_tang < 100
+	~if story_tangBirthday > 1 || !story_tangBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Tang's birthday today - she's turning [=call_charaAge(tang)]! You kind of want to surprise her... maybe with something science-y?
+
+	[else if age <= 16]
+		You notice the date on your holopalm. Tang's birthday. She's [=call_charaAge(tang)] now. You wonder if she'd appreciate a gesture... or just call it inefficient.
+
+	[else]
+		Today marks Tangent's birthday. She's turning [=call_charaAge(tang)], and while she's unlikely to mention it herself, you're considering doing something nice for her.
+
+	[end]
+
+	[if hog_fact_tang_likes_yellowflower && hog_fact_tang_likes_roots]
+		You know Tangent has a quiet fondness for Yellow Flowers, and she always lights up when presented with Medicinal Roots - likely to research.
+
+	[else if hog_fact_tang_likes_roots]
+		You recall Tangent being intrigued by Medicinal Roots. Not as a gift, necessarily - but as a subject of study, which might amount to the same thing.
+
+	[else if hog_fact_tang_likes_yellowflower]
+		You remember how much Tangent likes Yellow Flowers - she once cataloged five Vertumnan varieties just for fun. Or research. Or both.
+
+	[else]
+		You're not sure what Tangent would like - her reactions are often hard to read. But knowing her, even something symbolic like a Cake might be quietly acknowledged... maybe even eaten in private.
+
+	[end]
+
+	* Walk up to Tangent
+		~call story(tangRepeat)
+
+	* Maybe later		
+
+=== vaceBirthday ==============================================
+	~if chara = high_vace
+	~if call_charaBirthday(vace)
+	~if call_canGift(vace)
+	~if hog_fact_vace_birthday
+	~if mem_foundCollectible
+	~if love_vace < 100
+	~if story_vaceBirthday > 1 || !story_vaceBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 16]
+		It's Vace's birthday today - he's [=call_charaAge(vace)] now. He probably expects a parade... or a sparring match. Maybe both.
+
+	[else]
+		You catch the date on your holopalm - it's Vace's birthday. He's [=call_charaAge(vace)] now. He'd probably mock you for making a big deal out of it... which somehow makes you want to, anyway.
+
+	[end]
+
+	[if hog_fact_vace_likes_device && hog_fact_vace_likes_cake]
+		You've figured out he has a thing for Strange Devices - and despite all that posturing, he's a sucker for Cakes too. Not that he'd ever admit it.
+
+	[else if hog_fact_vace_likes_device]
+		You know Vace is into Strange Devices - the weirder, the better. Maybe it's a 'know thy enemy' thing, or maybe he just likes shiny toys.
+
+	[else if hog_fact_vace_likes_cake]
+		You know Vace pretends he's too mature for Cakes - but you've seen the way he devours them. Might be your best bet.
+
+	[else]
+		You're not sure what Vace actually _likes_. He's hard to read - probably on purpose. But even someone like him might appreciate the effort.
+
+	[end]
+
+	[if hog_fact_vace_dislikes_fruit && hog_fact_vace_dislikes_yellowflower && hog_fact_vace_dislikes_egg]
+		You're pretty sure Yellow Flowers, Xeno Eggs, and Bobber Fruits would just piss him off.
+
+	[else if hog_fact_vace_dislikes_fruit && hog_fact_vace_dislikes_yellowflower]
+		You're pretty sure Yellow Flowers and Bobber Fruits would just piss him off.
+
+	[else if hog_fact_vace_dislikes_fruit && hog_fact_vace_dislikes_egg]
+		You're pretty sure Xeno Eggs and Bobber Fruits would just piss him off.
+
+	[else if hog_fact_vace_dislikes_yellowflower && hog_fact_vace_dislikes_egg]
+		You're pretty sure Yellow Flowers and Xeno Eggs would just piss him off.
+
+	[else if hog_fact_vace_dislikes_fruit]
+		You once made the mistake of offering a Bobber Fruit. Never again.
+
+	[else if hog_fact_vace_dislikes_yellowflower]
+		You once made the mistake of offering a Yellow Flower. Never again.
+
+	[else if hog_fact_vace_dislikes_egg]
+		You once made the mistake of offering a Xeno Egg. Never again.
+
+	[end]
+
+
+	* Walk up to Vace
+		~call story(vaceRepeat)
+
+	* Maybe later
+		

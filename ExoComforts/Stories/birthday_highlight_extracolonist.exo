@@ -1,0 +1,464 @@
+=== avianBirthdayReminder ========================================
+	~if chara = high_avian
+	~if call_charaBirthday(avian)
+	~if call_canGift(avian)
+    ~if call_charaExists(avian)
+	~if hog_fact_avian_birthday
+	~if mem_foundCollectible
+	~if love_avian < 100
+	~if story_avianBirthdayReminder > 1 || !story_avianBirthdayReminder
+	~if age <= 13
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		You check your holopalm - Avian's birthday today and he's turning [=call_charaAge(avian)]! You spot him stretching his wings in the garrison, probably getting ready for more flight training. Maybe a birthday surprise would give him something else to focus on for once!
+
+	[else if age <= 16]
+
+        
+	[else]
+
+
+	[end]
+
+	[if hog_fact_avian_likes_device && hog_fact_avian_likes_cake]
+		You know Avian's into Strange Devices - probably for his robot projects - and despite all his big dreams, he's got a soft spot for Cake too.
+
+	[else if hog_fact_avian_likes_device]
+		You know Avian loves tinkering with Strange Devices, especially for his engineering projects. He'd probably be thrilled with something he could take apart and rebuild.
+
+	[else if hog_fact_avian_likes_cake]
+		You're pretty sure Avian would light up at the sight of Cake - he may act all sophisticated, but he's still got a sweet tooth.
+
+	[else]
+		You're not sure what Avian would want, but knowing how much he loves his engineering projects, maybe something technical? Or just Cake - most people like that.
+
+	[end]
+
+	[if hog_fact_avian_dislikes_fruit]
+		Maybe skip the Blue Bobberfruits - you remember him making a face about them before.
+
+	[end]
+
+	* Walk up to Avian
+		~call story(avianRepeat)
+
+	* Maybe later
+
+
+=== felixBirthdayReminder ========================================
+	~if chara = high_felix
+	~if call_charaBirthday(felix)
+	~if call_canGift(felix)
+	~if call_charaExists(felix)
+	~if hog_fact_felix_birthday
+	~if mem_foundCollectible
+	~if love_felix < 100
+	~if story_felixBirthdayReminder > 1 || !story_felixBirthdayReminder
+	~if age <= 13
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		Today is Felix's birthday - she's turning [=call_charaAge(felix)]! You haven't seen her much lately, but maybe a thoughtful gift would brighten her day.
+
+	[else if age <= 16]
+
+        
+	[else]
+
+        
+	[end]
+
+	[if hog_fact_felix_likes_crystal && hog_fact_felix_likes_device]
+		You know Felix loves Crystal Clusters - she's fascinated by how light refracts through them. And Strange Devices always get her curious mind spinning with questions about how they work.
+
+	[else if hog_fact_felix_likes_crystal]
+		You remember how Felix's eyes light up when she sees Crystal Clusters - the way light scatters through them always captures her attention.
+
+	[else if hog_fact_felix_likes_device]
+		You know Felix gets excited about Strange Devices. She's always full of questions about how they work!
+
+	[else]
+		You're not sure what Felix would like, but knowing her curious nature, probably something interesting to study. Or maybe just some Cake to share?
+
+	[end]
+
+	* Walk up to Felix
+		~call story(felixRepeat)
+
+	* Maybe later
+
+
+=== geneBirthdayReminder ========================================
+	~if chara = high_gene
+	~if call_charaBirthday(gene)
+	~if call_canGift(gene)
+	~if call_charaExists(gene)
+	~if hog_fact_gene_birthday
+	~if mem_foundCollectible
+	~if love_gene < 100
+	~if story_geneBirthdayReminder > 1 || !story_geneBirthdayReminder
+	~if age <= 13
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Gene's birthday today. She is turning [=call_charaAge(gene)]! She probably doesn't expect anyone to remember, but maybe a surprise would make her smile?
+
+	[else if age <= 16]
+
+
+	[else]
+
+
+	[end]
+
+    // Don't forget about pronouns change later on, although I suspect everything will be quite complicated with Gene's story, so maybe I'll need to have two different
+    // sub-branches for the birthday reminder, one for the early game and one for the late game?
+	[if hog_fact_gene_likes_device && hog_fact_gene_likes_cake && hog_fact_gene_likes_hotchocolate]
+		You know Gene lights up around Strange Devices. And despite her quiet demeanor, you've noticed her eyes sparkle when she sees Cake. Plus, she loves Hot Chocolate - maybe a cozy drink would be perfect for her birthday.
+
+	[else if hog_fact_gene_likes_device && hog_fact_gene_likes_cake]
+		You know Gene lights up around Strange Devices. And despite her quiet demeanor, you've noticed her eyes sparkle when she sees Cake.
+
+	[else if hog_fact_gene_likes_device && hog_fact_gene_likes_hotchocolate]
+		You know Gene lights up around Strange Devices. And she loves Hot Chocolate - maybe a cozy drink would be perfect for her birthday.
+
+	[else if hog_fact_gene_likes_cake && hog_fact_gene_likes_hotchocolate]
+		You've seen how Gene's face brightens when she spots Cake - she has quite the sweet tooth behind that shy exterior. And she loves Hot Chocolate - maybe a cozy drink would be perfect for her birthday.
+
+	[else if hog_fact_gene_likes_device]
+		You remember how interested Gene gets around Strange Devices - maybe something like that would be perfect for her birthday.
+
+	[else if hog_fact_gene_likes_cake]
+		You've seen how Gene's face brightens when she spots Cake - she has quite the sweet tooth behind that shy exterior.
+
+	[else]
+		You're not sure what Gene would like, but knowing how the other kids sometimes treat her, just showing you remember her birthday might mean everything.
+
+	[end]
+
+	[if hog_fact_gene_dislikes_crystal && hog_fact_gene_dislikes_egg]
+		You should probably avoid Crystal Clusters and Red Xeno Eggs - you remember her frowning when those came up before.
+
+	[else if hog_fact_gene_dislikes_crystal]
+		Just maybe skip the Crystal Clusters - something about them seemed to bother her.
+
+	[else if hog_fact_gene_dislikes_egg]
+		You should probably avoid Red Xeno Eggs - she didn't seem to like those much.
+
+	[end]
+
+	* Walk up to Gene
+		~call story(geneRepeat)
+
+	* Maybe later
+
+
+=== graphBirthdayReminder ========================================
+	~if chara = high_graph
+	~if call_charaBirthday(graph)
+	~if call_canGift(graph)
+	~if call_charaExists(graph)
+	~if hog_fact_graph_birthday
+	~if mem_foundCollectible
+	~if love_graph < 100
+	~if story_graphBirthdayReminder > 1 || !story_graphBirthdayReminder
+	~if repeat
+	~if age <= 13
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		Isn't today Calli's birthday? They're turning [=call_charaAge(graph)]! They'd absolutely light up if you brought them something fun!
+
+	[else if age <= 16]
+
+        
+	[else]
+
+        
+	[end]
+
+	[if hog_fact_graph_likes_crystal && hog_fact_graph_likes_wood]
+		You know Calli adores Crystal Clusters and Mushwood Logs, you think she'd be excited to get either of those for her art projects.
+
+	[else if hog_fact_graph_likes_crystal]
+		You know she absolutely loves Crystal Clusters. They're shiny and colorful, just like her art!
+
+	[else if hog_fact_graph_likes_wood]
+		You remember how excited Calli gets about Mushwood Logs - perfect for her art projects.
+
+	[else]
+		You're not sure what Calli would want for her birthday, but she's always so happy about her art supplies. Maybe something creative? Or just Cake - every kid loves cake!
+
+	[end]
+
+	[if hog_fact_graph_dislikes_device && hog_fact_graph_dislikes_egg]
+		Just definitely not Strange Devices or Red Xeno Eggs, they'll think it's a joke and get really upset.
+
+	[else if hog_fact_graph_dislikes_device]
+		Just maybe avoid Strange Devices - she'll probably think it's a joke and get really upset.
+
+	[else if hog_fact_graph_dislikes_egg]
+		Just not Red Xeno Eggs - she'll probably think it's a joke and get really upset.
+
+	[end]
+
+	* Walk up to Calli
+		~call story(graphRepeat)
+
+	* Maybe later
+
+
+=== komBirthdayReminder ========================================
+	~if chara = high_kom
+	~if call_charaBirthday(kom)
+	~if call_canGift(kom)
+	// ~if call_charaExists(kom) // kom is a special case, since he exist in the base game as well
+	~if call_storyExists(komRepeat)
+	~if hog_fact_kom_birthday
+	~if mem_foundCollectible
+	~if love_kom < 100
+	~if story_komBirthdayReminder > 1 || !story_komBirthdayReminder
+	~if age <= 13
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Kom's birthday today - he's turning [=call_charaAge(kom)]! He'd probably love a surprise! You wonder what [=mem_anemoneNick] gifted him.
+
+	[else if age <= 16]
+
+        
+	[else]
+
+        
+	[end]
+
+	[if hog_fact_kom_likes_egg && hog_fact_kom_likes_cake]
+		You know Kom has a huge appetite - he loves Red Xeno Eggs and gets excited about Cake. Either would probably make his day!
+
+	[else if hog_fact_kom_likes_egg]
+		You remember Kom mentioning he likes Red Xeno Eggs. You think it may be because it is a good source of protein, maybe?
+
+	[else if hog_fact_kom_likes_cake]
+		You know Kom has a sweet tooth for Cake. You are pretty sure it would make his day!
+
+	[else]
+		You're not sure what Kom would want, but knowing how much he trains, he'd probably appreciate anything edible. The guy's always hungry!
+
+	[end]
+
+	[if hog_fact_kom_dislikes_crystal && hog_fact_kom_dislikes_device]
+		Just... maybe avoid Crystal Clusters and Strange Devices. You remember him looking confused and a bit sad when he got one of those before.
+
+	[else if hog_fact_kom_dislikes_crystal]
+		Just... maybe avoid Crystal Clusters. You remember him looking confused and a bit sad when he got one before.
+
+	[else if hog_fact_kom_dislikes_device]
+		Just... maybe avoid Strange Devices. You remember him looking confused and a bit sad when he got one before.
+
+	[end]
+
+	* Walk up to Kom
+		~call story(komRepeat)
+
+	* Maybe later
+
+
+=== melBirthdayReminder ========================================
+	~if chara = high_mel
+	~if call_charaBirthday(mel)
+	~if call_canGift(mel)
+	~if call_charaExists(mel)
+	~if hog_fact_mel_birthday
+	~if mem_foundCollectible
+	~if love_mel < 100
+	~if story_melBirthdayReminder > 1 || !story_melBirthdayReminder
+	~if age <= 13
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Mel's birthday today - they're turning [=call_charaAge(mel)]! They're probably hoping someone remembered... and maybe brought something fun to celebrate with!
+
+	[else if age <= 16]
+
+        
+	[else]
+
+        
+	[end]
+
+	[if hog_fact_mel_likes_crystal && hog_fact_mel_likes_fruit]
+		You know Mel loves Crystal Clusters - they call them 'delicious' and start gnawing on them! And they also love Blue Bobberfruits - you remember how excited they got when you gave them some before.
+
+	[else if hog_fact_mel_likes_crystal]
+		You remember how they lit up when you gave them that Crystal Cluster before - they called it 'delicious' and started gnawing on it! Definitely their kind of gift.
+
+	[else if hog_fact_mel_likes_fruit]
+		You remember how excited Mel got when you gave them some Blue Bobberfruits before - they were practically bouncing with joy! Definitely their kind of gift.
+
+	[else]
+		You're not sure what Mel would want exactly, but knowing them, they'd probably be thrilled with just about anything. Maybe Cake? Everyone likes cake, right?
+
+	[end]
+
+	[if hog_fact_mel_dislikes_device && hog_fact_mel_dislikes_puffplush]
+		Just... probably skip the Strange Devices and Puffkin Plushie. You've seen that unimpressed look before.
+
+	[else if hog_fact_mel_dislikes_device]
+		Just... probably skip the Strange Devices. You've seen that unimpressed look before.
+
+	[else if hog_fact_mel_dislikes_puffplush]
+		Just... probably skip the Puffkin Plushie. You've seen that unimpressed look before.
+
+	[end]
+
+	* Walk up to Mel
+		~call story(melRepeat)
+
+	* Maybe later
+
+
+=== periBirthdayReminder ========================================
+	~if chara = high_peri
+	~if call_charaBirthday(peri)
+	~if call_canGift(peri)
+	~if call_charaExists(peri)
+	~if hog_fact_peri_birthday
+	~if mem_foundCollectible
+	~if love_peri < 100
+	~if story_periBirthdayReminder > 1 || !story_periBirthdayReminder
+	~if age <= 13
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Peri's birthday today - they're turning [=call_charaAge(peri)]! You spot them practically bouncing around the colony with even more energy than usual, if that's even possible. Their eyes are bright with excitement, and you can tell they're hoping someone remembers their special day.
+
+	[else if age <= 16]
+
+        
+	[else]
+
+        
+	[end]
+
+    You kinda wish you could gift Peri an investigation worthy of his skills, but you will have to settle for what you have in your pockets... and improvise.
+
+	// // Likes conditions - content to be added when preferences are finalized - while Peri has them defined, their reactions are the same for all gifts, so it's hard to write proper flavor text
+	// [if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_glowshell && hog_fact_peri_likes_bristleslugjerky]
+
+        
+	// [else if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_glowshell]
+
+        
+	// [else if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_bristleslugjerky]
+
+        
+	// [else if hog_fact_peri_likes_glowshell && hog_fact_peri_likes_bristleslugjerky]
+
+        
+	// [else if hog_fact_peri_likes_sacchi_comm]
+
+        
+	// [else if hog_fact_peri_likes_glowshell]
+
+        
+	// [else if hog_fact_peri_likes_bristleslugjerky]
+
+        
+	// [else]
+
+        
+	// [end]
+
+	// [if hog_fact_peri_dislikes_egg && hog_fact_peri_dislikes_soyshake]
+
+	// [else if hog_fact_peri_dislikes_egg]
+
+
+	// [else if hog_fact_peri_dislikes_soyshake]
+
+
+	// [end]
+
+	* Walk up to Peri
+		~call story(periRepeat)
+
+	* Maybe later
+
+
+=== sacchiBirthdayReminder ========================================
+	~if chara = high_sacchi
+	~if call_charaBirthday(sacchi)
+	~if call_canGift(sacchi)
+	~if hog_fact_sacchi_birthday
+	~if mem_foundCollectible
+	~if love_sacchi < 100
+	~if story_sacchiBirthdayReminder > 1 || !story_sacchiBirthdayReminder
+	~if repeat
+	~if age <= 13
+	~if call_charaExists(sacchi)
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 13]
+		It's Sacchi's birthday today! She's turning [=call_charaAge(sacchi)]! You spot her helping some of the younger kids, but she keeps glancing your way with a shy smile.
+
+	[else if age <= 16]
+		
+
+	[else]
+		
+
+	[end]
+
+    
+
+	[if hog_fact_sacchi_likes_yellowflower && hog_fact_sacchi_dislikes_cake]
+		You know Sacchi loves Yellow Flowers - they always brighten her day. But she doesn't like Cake, you are pretty sure of that.
+
+	[else if hog_fact_sacchi_likes_yellowflower]
+		You know Sacchi loves Yellow Flowers, maybe that would brighten her day?
+
+	[else]
+		You're not sure what Sacchi would want, but she's always so thoughtful with everyone else - maybe it's time someone was thoughtful with her for once.
+
+		[if hog_fact_sacchi_dislikes_cake]
+			But you are pretty sure she does not like Cake.
+
+		[end]
+	[end]
+
+	* Walk up to Sacchi
+		~call story(sacchiRepeat)
+
+	* Maybe later
+

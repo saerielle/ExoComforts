@@ -1,0 +1,673 @@
+/******************************************************************************* }*/
+/** Nearby ***********************************************************************/
+/******************************************************************************* {*/
+@replace|nearbyRain|You're still congratulating yourself for being so tough and rational when you slip in the mud and twist your ankle the wrong way.|Owie owie owieeee!|0|0
+{
+		You're still congratulating yourself for being so tough and rational when you slip in the mud and twist your ankle the wrong way.
+		
+		Owie owie owieeee!
+
+	* Find another route around it
+		~call keep
+
+		[if season == quiet]
+			You watch the spark snow for a moment longer. It's pretty, but it's coming down fast. You backtrack a little to look for another way around.
+
+		[else if season == wet]
+			This rain is just getting worse. Your boots are already full of water and you haven't even made it halfway. You sigh and head off to try a different route - maybe one with less squelching.
+
+		[else]
+			Whatever this is, it's not normal rain - and you're not signing up to find out what it _actually_ is. You step back, brush yourself off, and look for a clearer path forward.
+
+		[end]
+
+}
+
+@replace|nearbyHole|** On second thought, nope|* Leave it be|0|0
+{
+		** On second thought, nope
+			// remove it because this is a bottleneck
+
+	* Give it a wide berth and move on
+		// remove it because this is a bottleneck
+	
+	* Come back later
+		~call keep
+
+		You're not afraid of bugs or muck or mysterious underground critters. You just, y'know... want to grab some gloves first.
+		
+		There'll be time to dig around in holes later.
+
+}
+
+@replace|nearbyDig|* Avoid it||0|0
+{
+	* Give it a wide berth and move on
+		// walk away and remove the bottleneck
+
+	* Come back to it later
+		~call keep
+
+		[if season == quiet]
+			It's probably nothing... but it can wait. Spark snow makes everything look suspicious anyway.
+		[else]
+			It's probably nothing... but it can wait. Maybe next time.
+		[end]
+
+}
+
+// Eating, need multiple replaces for this one
+@replace|nearbySeeds|~set bg = nearby_close||0|0
+{
+	~set bg = nearby_close
+
+	This looks like a nice spot to stop for lunch.
+
+	* Sit down and eat lunch
+}
+
+@replace|nearbySeeds|* Suddenly...||0|0
+{
+		** Suddenly...
+}
+
+@replace|nearbySeeds|** Apologize||0|0
+{
+			*** Apologize
+}
+
+@replace|nearbySeeds|** Spit seeds at him||0|0
+{
+			*** Spit seeds at him
+}
+
+@replace|nearbySeeds|* Practice spitting seeds||0|0
+{
+		** Practice spitting seeds
+}
+
+@replace|nearbySeeds|* Just relax||0|0
+{
+		** Just relax
+}
+
+@replace|nearbySeeds|* Pick all the seeds up|You stop yourself in mid-spit, remembering Sym's warning about invasive species.|0|0
+{
+		** Pick all the seeds up
+			~if mem_seedsSym
+			
+			You stop yourself in mid-spit, remembering Sym's warning about invasive species.
+
+	* Not hungry yet, but maybe later
+		~call keep
+}
+
+// Continuing with other nearby events
+@replace|nearbyHillRock|* Continue on your way.||0|0
+{
+	* Continue on your way
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|nearbyLogging|You like the forest better the way it is, all wild and natural.||0|0
+{
+		You like the forest better the way it is, all wild and natural.
+
+	* Come back later
+		~call keep
+}
+
+@replace|nearbyFarming|* Ignore it||0|0
+{
+	* Continue on your way
+		// end
+
+	* Come back later
+		// Can't justify come back later here, because this event has a lot of good things when encountering it for the first time
+		~if !first
+		~call keep
+}
+
+// Only give +1 perception when encountering the event for the first time, since you can back off and come back later
+@replace|nearbyFarming|~set skill_perception++||0|0
+{
+	~setif first ? skill_perception++
+}
+
+@replace|nearbyUnisaur|* Leave||0|0
+{
+	* Give it a wide berth and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|nearbyLittleThings|You stare with big eyes at the wonders of the natural world.||0|0
+{
+		You stare with big eyes at the wonders of the natural world.
+
+	* Come back later
+		~call keep
+}
+
+/******************************************************************************* }*/
+/** Survey ************************************************************************/
+/******************************************************************************* {*/
+@replace|surveyBushbubHarvest|* Just ignore it||0|0
+{
+	* Just ignore it and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|surveyPhotosynths|~set skill_animals++||0|0
+{
+	~setif first ? skill_animals++
+}
+
+@replace|surveyPhotosynths|* Ignore them||0|0
+{
+	* Ignore them and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|surveyWhiteout|It's impossible to get a closer look. You pull your collar tighter against the storm and move on.||0|0
+{
+		It's impossible to get a closer look. You pull your collar tighter against the storm and move on.
+
+	* Go back where you came from
+		~call keep
+
+		You turn around and head back the way you came. The storm is getting worse, and you don't want to get caught out in it.
+}
+
+@replace|surveyWandererStomp|You hear the crash of thunder from somewhere nearby. Loud. Sounds like it's getting closer...|~set effect = screenShake|0|0
+{
+	You hear the crash of thunder from somewhere nearby. Loud. Sounds like it's getting closer...
+
+	You pause. That didn't sound like ordinary thunder. Something about the rhythm - the timing - it gives you a weird feeling in your chest.
+
+	* Investigate the sound
+		~set effect = screenShake
+}
+
+@replace|surveyWandererStomp|* Stand still||0|0
+{
+		** Stand still
+}
+
+@replace|surveyWandererStomp|* Run!||0|0
+{
+		** Run!
+}
+
+@replace|surveyWandererStomp|* Stay calm and analyze its movement||0|0
+{
+		** Stay calm and analyze its movement
+}
+
+@replace|surveyWandererStomp|*= rescue||0|0
+{
+		**= rescue
+}
+
+@replace|surveyWandererStomp|You look up to what hit you, but it - or they - is already gone, having saved your life.|[end]|0|0
+{
+			You look up to what hit you, but it - or they - is already gone, having saved your life.
+		[end]
+
+	* Find another route around it
+		~call keep
+		
+		You're not scared, exactly. But your gut says to give this area a wide berth. You mark the location on your holopalm.
+
+}
+
+@replace|surveyFloatingRocks|* Leave the weird rocks||0|0
+{
+	* Leave the weird rocks and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|surveyPictures|Utopia doesn't think they're worth any Kudos, for some reason.||0|0
+{
+		Utopia doesn't think they're worth any Kudos, for some reason.
+
+	* Nah, maybe later
+		~call keep
+		
+		You decide to come back later.
+}
+
+@replace|surveyPiss|* Ignore it||0|0
+{
+	* Ignore it and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|surveySparkle|* Just move on||0|0
+{
+	* Ignore it and just move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+/******************************************************************************* }*/
+/** Forage ************************************************************************/
+/******************************************************************************* {*/
+@replace|forageBristleslug|* Ignore it||0|0
+{
+	* Ignore it and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|forageSqueedger|* Go around it||0|0
+{
+	* Give it a wide berth and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+// This is not strong narratively, but you can imagine that the player just stops and sits there, since event is still there
+@replace|forageLost|Staring at all this jungle _has_ made you a little more perceptive to the subtle differences. Maybe next time, you won't get so lost.||0|0
+{
+		Staring at all this jungle _has_ made you a little more perceptive to the subtle differences. Maybe next time, you won't get so lost.
+
+	* Stop walking and stay put for a while
+		~call keep
+		
+		You take a breath and sit down on a fallen log, deciding not to wander any further - for now. Maybe someone from Expeditions will come around, or the comms will clear up. It's not the worst place to chill for a bit.
+
+}
+
+@replace|forageFollow|* Nah, forget it||0|0
+{
+	* Nah, forget it and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+@replace|forageFloatcows|* Leave them alone||0|0
+{
+	* Leave them alone and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+// Multiple ones for forageBlep
+@replace|forageBlep|~set left = utopia||0|0
+{
+	You spot some blep bushes growing right in the open. Prime for the picking!
+
+	* Harvest some leaves
+		~set left = utopia
+		~set skill_kudos + 5
+}
+
+@replace|forageBlep|* Chew some blep leaves||0|0
+{
+		** Chew some blep leaves
+}
+
+// A small hack here with the hidden option to hide the Good [kid|girl|boy] text, because I can't get it working with the replace for some reason
+@replace|forageBlep|* Don't chew them||0|0
+{
+		** Don't chew them
+			~set skill_rebellion--
+
+			Good [kid|girl|boy]. Utopia's probably exaggerating about the cosmetic effects, but she must have a good reason. Blep leaves will probably stunt your growth, or something.
+
+	* Leave it for now
+		~call keep
+		
+		You do not really have need for blep leaves right now, anyway. You can come back later.
+
+	* 
+}
+
+@replace|forageFlowers|You lie down among the flowers and breathe in their sweet perfume. Insects lazily circle overhead, and their droning lulls you into a much-needed nap.||0|0
+{
+		You lie down among the flowers and breathe in their sweet perfume. Insects lazily circle overhead, and their droning lulls you into a much-needed nap.
+
+	* Come back later
+		~call keep
+}
+
+@replace|forageManticoreEgg|* Leave it||0|0
+{
+	* Leave it alone and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+// Jelly arc story needs a few replaces
+@replace|forageJellyArch|~set bg = valley|~set left = utopia|0|0
+{
+	~set bg = valley
+
+	Like the rest of the planet, the Valley is home to some strange plant and animal life. Up ahead, you spot Utopia kneeling beside one of the jelly arches - a huge, gelatinous arch held together by solid 'veins', large enough for a person to walk underneath.
+
+	She seems deep in thought, muttering to herself and poking at it with something. You can't quite hear what she's saying from here.
+
+	* Go see what Utopia's up to
+		You head over, curiosity getting the better of you and take a closer look at the jelly arch.
+
+		These arches don't _look_ like animals, but you've been around long enough to realize that things aren't always what they seem. Upon closer inspection, the arches seem to pulse and breathe, even though they have no visible organs. And they're always kind of... warm. It's unsettling.
+
+		-
+		~set left = utopia
+	
+}
+
+@replace|forageJellyArch|* Offer Utopia a crystal||0|0
+{
+		** Offer Utopia a crystal
+}
+
+
+@replace|forageJellyArch|* Get her to stop||0|0
+{
+		** Get her to stop
+}
+
+
+@replace|forageJellyArch|* Leave||0|0
+{
+		** Leave Utopia alone and move on
+		// end
+
+	* Leave her to it - this can wait
+		~call keep
+	
+		You decide not to bother her. You can come back later if you feel like poking gooey mysteries.
+}
+
+/******************************************************************************* }*/
+/** Artifacts *********************************************************************/
+/******************************************************************************* {*/
+// Spy fly may require a few replaces
+@replace|artifactsSpyBug|~set bg = ridge_close||0|0
+{
+	~set bg = ridge_close
+
+	Up ahead, the air is thick with little black shapes - clouds of flies dancing in the heat. You wince. This area always seems to be the worst for bugs.
+
+	You can already hear the buzzing...
+
+	* Go forward
+
+}
+
+@replace|artifactsSpyBug|* Swat that eyefly!||0|0
+{
+		** Swat that eyefly!
+}
+
+@replace|artifactsSpyBug|*= win||0|0
+{
+		**= win
+}
+
+@replace|artifactsSpyBug|*= lose||0|0
+{
+		**= lose
+}
+
+@replace|artifactsSpyBug|* Be zen and let it be||0|0
+{
+		** Be zen and let it be
+}
+
+@replace|artifactsSpyBug|Using Dys' strength, you find a sense of peace deep down and just block out the incessant buzzing.||0|0
+{
+			Using Dys' strength, you find a sense of peace deep down and just block out the incessant buzzing.
+
+	* Maybe later
+		~call keep
+		
+		You decide to look for another way around. Bugs you can handle - but _that many_? Pass. You'll come back when they're less... enthusiastic.
+}
+
+@replace|artifactsSpaceBeacon|* Ignore it and move on||0|0
+{
+	* Ignore it and move on
+		// end
+
+	* Come back later
+		~call keep
+}
+
+// Ghost fish may require a few replaces. And yes, this is one of the least narratively strong changes, but if we want to support get back later...
+@replace|artifactsGhostFish|At least one thing survives in the haze, though.|* Wait. Airsquid are predators.|0|0
+{
+	-
+
+	At least one thing survives in the haze, though. While you look for a good spot to eat, you spot flickers of silver darting in and out of the fog - like ripples of light on a lake.
+
+	They're oddly beautiful... but there's something about them that makes the hairs on your arms stand up.
+
+	* Sit down and unpack your lunch
+		As you unpack your tiffin-box, the silver flashes come up out of the fog and begin to surround you. They're animals - eyeless, almost translucent creatures about the length of your arm, trailing meters-long tentacles behind them. Their mournful hooting is magical and strange. You look them up on your holopalm.
+	
+		Oh, airsquid babies!
+		
+		** Wait. Airsquid are predators.
+}
+
+@replace|artifactsGhostFish|*= win||0|0
+{
+		**= win
+}
+
+@replace|artifactsGhostFish|*= lose||0|0
+{
+		**= lose
+}
+
+@replace|artifactsGhostFish|** ...||0|0
+{
+			*** ...
+}
+
+@replace|artifactsGhostFish|** ...||0|0
+{
+			*** ...
+}
+
+@replace|artifactsGhostFish|By the time you realize the airsquid are no longer chasing you, he's gone.||0|0
+{
+			By the time you realize the airsquid are no longer chasing you, he's gone.
+
+	* ...Maybe not here
+		~call keep
+		
+		The fog is thicker than usual, and those silver things give you a weird feeling. You decide to find a less spooky place to eat.
+
+}
+
+@replace|artifactsLocusts|You're out of there before they arrive, and when you come back later in the week the entire place has been stripped of vegetation. The only things still standing are the crystals, glinting in the sunlight.||0|0
+{
+		You're out of there before they arrive, and when you come back later in the week the entire place has been stripped of vegetation. The only things still standing are the crystals, glinting in the sunlight.
+
+	* Come back later
+		~call keep
+		
+		You decide to come back later and see if you can befriend it. Maybe.
+
+}
+
+@replace|artifactsFloatcows|You bolt for cover with your hands thrown over your head. You don't even care what's up there... you just know that was _no_ rain!||0|0
+{
+		You bolt for cover with your hands thrown over your head. You don't even care what's up there... you just know that was _no_ rain!
+
+	* Find another way around it
+		~call keep
+		
+		You trust your instincts and veer off the trail. Whatever's going on upwind, you'd rather not be directly underneath it. You can always loop back later.
+
+}
+
+// Thirst event requires a few replaces. And yes, this change makes the least sense! Like, you are thirsty, going back a few steps is not going to help you with that!
+// But this event has a perception-based battle, which the player probably has on max already so nothing to gain from it
+// There is also a ~set skill_toughness++ option, but that totals in +20 whole stress (+10 from event, +20 and -10 after, not accounting for regular stress loss in the expeditions), which is a huge payment for a single point of toughness
+@replace|artifactsThirsty|You're getting thirsty.|~set skill_stress + 10|0|0
+{
+	You're getting thirsty.
+
+	You feel for your backup canteen, but it's missing! Somehow you lost it since you left this morning, and you're all out of drinking water.
+
+	-
+	You're not in trouble yet, but you can feel the heat on your neck.
+
+	* Keep going anyway
+		~set skill_stress + 10
+}
+
+@replace|artifactsThirsty|* Head back to the colony||0|0
+{
+		** Head back to the colony
+}
+
+@replace|artifactsThirsty|** Go home||0|0
+{
+		*** Go home
+}
+
+@replace|artifactsThirsty|* Call Dys for help||0|0
+{
+		** Call Dys for help
+}
+
+@replace|artifactsThirsty|* Tough it out||0|0
+{
+		** Tough it out
+}
+
+@replace|artifactsThirsty|* Search for water||0|0
+{
+		** Search for water
+}
+
+@replace|artifactsThirsty|**= win||0|0
+{
+		***= win
+}
+
+@replace|artifactsThirsty|**= lose||0|0
+{
+		***= lose
+}
+
+@replace|artifactsThirsty|*= watato||0|0
+{
+		**= watato
+}
+
+@replace|artifactsThirsty|Ah - that hits the spot!||0|0
+{
+			Ah - that hits the spot!
+
+	* Play it safe and double back
+		~call keep
+		
+		You scowl and kick at the dirt. No way are you risking heatstroke over a survey run. You'll come back when you're better supplied.
+
+}
+
+@replace|artifactsEarthquake|You set up a drone hive to measure the sediment layers along the cliffside, and learn a few things about rocks.||0|0
+{
+		You set up a drone hive to measure the sediment layers along the cliffside, and learn a few things about rocks.
+
+	* Leave them to their work
+		~call keep
+}
+
+@replace|artifactsEarthquake|> helpwork||0|0
+{
+			> helpwork
+
+		** Leave them to their work
+			~call keep
+}
+
+@replace|artifactsHappyRock|You wonder if the rock is natural.|[end]|0|0
+{
+			You wonder if the rock is natural. Animals seem to really like it; as you're taking readings you watch a swarm of dorbsmoth basking on the rock as well, just like Dys.
+
+			*** Relax here
+				~set skill_stress - 20
+
+				You lie down on the rock beside Dys, letting the strange magic fill you with an incredible sense of peace, love, and unity with the universe.
+
+			*** Remember this spot for later
+				~call keep
+	
+	* Stay for a while
+		~if !first || mem_dead_dys
+		~set skill_stress - 20
+		
+		[if mem_dead_dys]
+			You lie down on the rock, letting the strange magic fill you with an incredible sense of peace, love, and unity with the universe.
+		[else]
+			You lie down on the rock beside Dys, letting the strange magic fill you with an incredible sense of peace, love, and unity with the universe.
+		[end]
+
+	* Remember this spot for later
+		// Only allow this if Dys is not here (because conversation with him can give engineering points), or if we already were here before
+		// Alternatively, you can talk to Dys -> Remember for later and the event will still be on the map when you want to relax a bit
+		~if !first || mem_dead_dys
+		~call keep
+}
+
+@insert|artifactsCrystals|*= win|0
+{
+	* Eh... you'll come back to it later
+		~call keep
+}
+
+@replace|artifactsDillypillar|It's so far away, but you record its movement coordinates and take a video for Utopia.||0|0
+{
+		It's so far away, but you record its movement coordinates and take a video for Utopia.
+
+	* Cool, maybe later
+		~call keep
+		
+		You take one last look, then turn away. Maybe you'll get a better view next time...
+}
+
+@replace|artifactsBounceWeasel|* Leave them||0|0
+{
+	* Leave them alone and move on
+		// end
+
+	* Come back later
+		~call keep
+}

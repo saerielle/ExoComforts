@@ -1,0 +1,39 @@
+=== rexBarReminder ==============================================
+	~if chara = high_rex
+	~if call_canGift(rex)
+	~if mem_foundCollectible
+	~if story_rex2BuildStart && !mem_loungeBar
+	~if story_rexBarReminder >= 1 || !story_rexBarReminder
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if random!]
+		You spot Rex lugging some supplies and remember he still needs mushwood for his bar.
+
+	[else]
+		You remember: if Rex wants a bar, he's gonna need wood. Lots of it.
+
+	[else]
+		Rex said he'd build a bar if he had enough mushwood. And you kinda wanna see that happen.
+
+	[else]
+		You spot Rex hauling a plank and remember - you promised to help with the bar. He still needs more wood.
+
+	[else]
+		You get a weird mental image of Rex juggling mushwood logs. Maybe it's time to bring him more.
+	
+	[else]
+		You keep thinking about Rex's half-finished bar. It's practically begging for more mushwood.
+
+	[end]
+
+	* Walk up to Rex
+		~set story_rexBarReminder
+		~call story(rexRepeat)
+
+	* Maybe later
+		~set story_rexBarReminder
+

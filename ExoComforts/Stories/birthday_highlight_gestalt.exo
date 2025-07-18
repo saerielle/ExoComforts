@@ -1,0 +1,115 @@
+=== spellaltBirthday ==============================================
+	~if chara = high_spellalt
+	~if call_charaBirthday(spellalt)
+	~if call_canGift(spellalt)
+	~if hog_fact_spellalt_birthday
+	~if mem_foundCollectible
+	~if love_spellalt < 100
+	~if story_spellaltBirthday > 1 || !story_spellaltBirthday
+	~if repeat
+
+	~call preventSeenSkip
+
+	~set charas = none
+
+	[if age < 16]
+		It's Alt's birthday today - she's turning [=call_charaAge(spellalt)]! You wonder if she'd appreciate something thoughtful... or maybe just something to keep her busy.
+
+	[else]
+		Today marks Alt's birthday. She's [=call_charaAge(spellalt)] now, and knowing her, she probably hasn't mentioned it to anyone except Gest. Maybe a surprise would actually mean something to her.
+
+	[end]
+
+	[if hog_fact_spellalt_likes_wood && hog_fact_spellalt_likes_roots && hog_fact_spellalt_likes_cake]
+		You know Alt has a thing for Mushwood Logs and Medicinal Roots - probably for some project or another. And despite her tough exterior, she lights up at the sight of Cake like anyone else.
+
+	[else if hog_fact_spellalt_likes_wood && hog_fact_spellalt_likes_roots]
+		You know Alt's into both Mushwood Logs and Medicinal Roots. She always seems to have some plan brewing for useful materials like that.
+
+	[else if hog_fact_spellalt_likes_wood && hog_fact_spellalt_likes_cake]
+		You know Alt loves Mushwood Logs - something about the perfect material properties. And she's got a secret sweet tooth for Cake, even if she acts all practical.
+
+	[else if hog_fact_spellalt_likes_roots && hog_fact_spellalt_likes_cake]
+		You know Alt gets excited about Medicinal Roots - probably sees the potential in Vertumnan medicine. Plus, Cake always gets her to smile.
+
+	[else if hog_fact_spellalt_likes_wood]
+		You're pretty sure Alt likes Mushwood Logs. She's always going on about material properties and practical applications.
+
+	[else if hog_fact_spellalt_likes_roots]
+		You know Alt's interested in Medicinal Roots. Probably thinking about all the medical applications nobody else has considered yet.
+
+	[else if hog_fact_spellalt_likes_cake]
+		You know Alt has a weakness for Cake, even if she tries to play it cool. Everyone needs something sweet sometimes.
+
+	[else]
+		You're not totally sure what Alt would want - she's pretty practical about most things. But Cake seems like a safe bet for anyone's birthday.
+
+	[end]
+
+	[if hog_fact_spellalt_dislikes_egg && hog_fact_spellalt_dislikes_device]
+		Just definitely avoid Red Xeno Eggs and Strange Devices. You're pretty sure she'd find both of them either gross or pointless.
+
+	[else if hog_fact_spellalt_dislikes_egg]
+		Just maybe skip the Red Xeno Eggs. Something about them really doesn't sit right with her.
+
+	[else if hog_fact_spellalt_dislikes_device]
+		Probably best to avoid Strange Devices. She seems to think they're more trouble than they're worth.
+
+	[end]
+
+	* Walk up to Alt
+		~call story(spellaltRepeat)
+
+	* Maybe later
+
+=== spellgestBirthday ==============================================
+	~if chara = high_spellgest
+	~if call_charaBirthday(spellgest)
+	~if call_canGift(spellgest)
+	~if hog_fact_spellgest_birthday
+	~if mem_foundCollectible
+	~if love_spellgest < 100
+	~if story_spellgestBirthday > 1 || !story_spellgestBirthday
+	~if repeat
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[if age <= 15]
+		It's Gest's birthday today - she's turning [=call_charaAge(spellgest)]! You wonder if she'd appreciate a gift, or if she'd just lecture you about _resource allocation efficiency_.
+
+	[else]
+		Today marks Gest's birthday. She's [=call_charaAge(spellgest)] now. Knowing her, she's probably already back to work, treating it like any other day. 
+
+	[end]
+
+	[if hog_fact_spellgest_likes_cake && hog_fact_spellgest_likes_egg]
+		You know Gest has a thing for Cake and Red Xeno Eggs - she practically devours them whenever she gets the chance. Either would probably make her day.
+
+	[else if hog_fact_spellgest_likes_cake]
+		You're pretty sure Gest loves Cake. She's got quite the sweet tooth, even if she tries to justify it as "getting daily carbs in."
+
+	[else if hog_fact_spellgest_likes_egg]
+		You know Gest loves Red Xeno Eggs - she'll crunch right through the shell and everything.
+
+	[else]
+		You're not totally sure what Gest would want, but she seems practical enough. Maybe something sweet like Cake would work?
+
+	[end]
+
+	[if hog_fact_spellgest_dislikes_device && hog_fact_spellgest_dislikes_fruit]
+		Just... definitely avoid Strange Devices and Blue Bobberfruits. You're pretty sure she'd panic about the first and be sarcastically unimpressed by the second.
+
+	[else if hog_fact_spellgest_dislikes_device]
+		Just... maybe skip the Strange Devices. Last time you offered one she panicked, thinking it might be a bomb.
+
+	[else if hog_fact_spellgest_dislikes_fruit]
+		Just... probably not Blue Bobberfruits. She's made it pretty clear that fruit isn't exactly her favorite snack.
+
+	[end]
+
+	* Walk up to Gest
+		~call story(spellgestRepeat)
+
+	* Maybe later

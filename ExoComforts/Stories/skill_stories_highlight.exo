@@ -1,0 +1,559 @@
+=== anemoneSkillReminder1 ==============================================
+	~if chara = high_anemone
+	~if skill_toughness >= 20
+	~if mem_anemoneUnlock == 0
+	~if !mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You notice [=mem_anemoneNick] practicing her sportsball moves in the garrison yard. She's getting pretty good! Maybe you could train together now that your toughness has improved?
+
+	* Walk up to [=mem_anemoneNick]
+		~call story(anemoneRepeat)
+
+	* Maybe later
+
+=== anemoneSkillReminder2 ==============================================
+	~if chara = high_anemone
+	~if skill_toughness >= 40
+	~if mem_anemoneUnlock == 1 || mem_anemoneUnlock == 0 && mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[=mem_anemoneNick] is working through some advanced combat drills - your improved toughness might let you keep up with her more challenging training now.
+
+	* Walk up to [=mem_anemoneNick]
+		~call story(anemoneRepeat)
+
+	* Maybe later
+
+=== anemoneSkillReminder3 ==============================================
+	~if chara = high_anemone
+	~if skill_toughness >= 80
+	~if mem_anemoneUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	[=mem_anemoneNick] is going all-out in her training - with your toughness, you might finally be able to give her the real challenge she's been looking for.
+
+	* Walk up to [=mem_anemoneNick]
+		~call story(anemoneRepeat)
+
+	* Maybe later
+
+
+=== calSkillReminder1 ==============================================
+	~if chara = high_cal
+	~if skill_biology >= 20
+	~if mem_calUnlock == 0
+	~if !mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your growing knowledge of biology reminds you of some interesting facts about Vertumna's wildlife - Cal would probably enjoy hearing about them.
+
+	* Go find Cal
+		~call story(calRepeat)
+
+	* Maybe later
+
+=== calSkillReminder2 ==============================================
+	~if chara = high_cal
+	~if skill_biology >= 40
+	~if mem_calUnlock == 1 || mem_calUnlock == 0 && mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	With your improved understanding of biology, you remember some amusing incidents from your science classes - Cal might find them entertaining.
+
+	* Go find Cal
+		~call story(calRepeat)
+
+	* Maybe later
+
+=== calSkillReminder3 ==============================================
+	~if chara = high_cal
+	~if skill_biology >= 80
+	~if mem_calUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your advanced biology knowledge might help you identify any unusual plants Cal encounters in his gardening work.
+
+	* Go find Cal
+		~call story(calRepeat)
+
+	* Maybe later
+
+
+=== dysSkillReminder1 ==============================================
+	~if chara = high_dys
+	~if skill_bravery >= 20
+	~if mem_dysUnlock == 0
+	~if !mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been feeling more brave lately - might be able to keep up with Dys's weird dares now.
+
+	* Walk up to Dys
+		~call story(dysRepeat)
+
+	* Maybe later
+
+=== dysSkillReminder2 ==============================================
+	~if chara = high_dys
+	~if skill_bravery >= 40
+	~if mem_dysUnlock == 1 || mem_dysUnlock == 0 && mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your courage has grown considerably - you might be brave enough now to suggest even bolder challenges to Dys.
+
+	* Walk up to Dys
+		~call story(dysRepeat)
+
+	* Maybe later
+
+=== dysSkillReminder3 ==============================================
+	~if chara = high_dys
+	~if skill_bravery >= 80
+	~if mem_dysUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You might finally be courageous enough to dare Dys to open up about some personal things he keeps hidden.
+
+	* Walk up to Dys
+		~call story(dysRepeat)
+
+	* Maybe later
+
+
+=== marzSkillReminder1 ==============================================
+	~if chara = high_marz
+	~if skill_persuasion >= 20
+	~if mem_marzUnlock == 0
+	~if !mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've gotten pretty good at making convincing arguments - maybe you could help Marz see that Vertumna isn't as boring as she thinks it is?
+
+	* Walk up to Marz
+		~call story(marzRepeat)
+
+	* Maybe later
+
+=== marzSkillReminder2 ==============================================
+	~if chara = high_marz
+	~if skill_persuasion >= 40
+	~if mem_marzUnlock == 1 || mem_marzUnlock == 0 && mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your persuasion skills have gotten pretty good - maybe good enough to hold your own in a real debate with Marz?
+
+	* Walk up to Marz
+		~call story(marzRepeat)
+
+	* Maybe later
+
+=== marzSkillReminder3 ==============================================
+	~if chara = high_marz
+	~if skill_persuasion >= 80
+	~if mem_marzUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You catch yourself smiling. You might know some colony gossip that even Marz hasn't heard yet.
+
+	* Walk up to Marz
+		~call story(marzRepeat)
+
+	* Maybe later
+
+
+=== tammySkillReminder1 ==============================================
+	~if chara = high_tammy
+	~if skill_empathy >= 20
+	~if mem_tammyUnlock == 0
+	~if !mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been getting better at understanding how others feel - maybe Tammy would appreciate some kindness today?
+
+	* Walk up to Tammy
+		~call story(tammyRepeat)
+
+	* Maybe later
+
+=== tammySkillReminder2 ==============================================
+	~if chara = high_tammy
+	~if skill_empathy >= 40
+	~if mem_tammyUnlock == 1 || mem_tammyUnlock == 0 && mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	With your growing empathy skills, you might be able to help Tammy come up with something really thoughtful for someone else.
+
+	* Walk up to Tammy
+		~call story(tammyRepeat)
+
+	* Maybe later
+
+=== tammySkillReminder3 ==============================================
+	~if chara = high_tammy
+	~if skill_empathy >= 80
+	~if mem_tammyUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You might be able to help Tammy with something really special for someone who needs it.
+
+	* Walk up to Tammy
+		~call story(tammyRepeat)
+
+	* Maybe later
+
+
+=== tangSkillReminder1 ==============================================
+	~if chara = high_tang
+	~if skill_reasoning >= 20
+	~if mem_tangUnlock == 0
+	~if !mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been working hard on your reasoning skills lately - maybe Tang would be interested in studying together now?
+
+	* Go find Tang
+		~call story(tangRepeat)
+
+	* Maybe later
+
+=== tangSkillReminder2 ==============================================
+	~if chara = high_tang
+	~if skill_reasoning >= 40
+	~if mem_tangUnlock == 1 || mem_tangUnlock == 0 && mem_newShip
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your reasoning abilities have improved significantly - Tang might finally consider you intellectually worthy of more advanced collaboration.
+
+	* Go find Tang
+		~call story(tangRepeat)
+
+	* Maybe later
+
+=== tangSkillReminder3 ==============================================
+	~if chara = high_tang
+	~if skill_reasoning >= 80
+	~if mem_tangUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Perhaps you could help Tang solve some of her trickier research problems now.
+
+	* Go find Tang
+		~call story(tangRepeat)
+
+	* Maybe later
+
+
+=== symSkillReminder1 ==============================================
+	~if chara = high_sym
+	~if skill_perception >= 40
+	~if mem_symUnlock == 0
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your perception has sharpened from all your time exploring - you find yourself noticing small details you would have missed before. When you next encounter Sym, you might be want to observe him more carefully.
+
+	* Look for Sym
+		~call story(symRepeat)
+
+	* Not right now
+
+=== symSkillReminder2 ==============================================
+	~if chara = high_sym
+	~if skill_perception >= 80
+	~if mem_symUnlock == 1
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your perception has become exceptionally keen - you notice patterns and behaviors that others would miss entirely. You wonder what you might discover if you observed Sym some more.
+
+	* Look for Sym
+		~call story(symRepeat)
+
+	* Maybe later
+
+
+=== nomiSkillReminder1 ==============================================
+	~if chara = high_nomi
+	~if skill_creativity >= 40
+	~if mem_nomiUnlock == 0
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been developing your creative skills - maybe Nomi would be interested in collaborating on an art project together?
+
+	* Go find Nomi
+		~call story(nomiRepeat)
+
+	* Maybe later
+
+=== nomiSkillReminder2 ==============================================
+	~if chara = high_nomi
+	~if skill_creativity >= 80
+	~if mem_nomiUnlock == 1
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your creativity has really flourished - you might be ready to help Nomi tackle one of their more ambitious artistic ideas.
+
+	* Go find Nomi
+		~call story(nomiRepeat)
+
+	* Maybe later
+
+
+=== rexSkillReminder1 ==============================================
+	~if chara = high_rex
+	~if skill_engineering >= 40
+	~if mem_rexUnlock == 0
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been getting pretty good with engineering lately. Rex is always tinkering with something - maybe he'd appreciate having someone with decent technical skills to help him out?
+
+	* Walk up to Rex
+		~call story(rexRepeat)
+
+	* Maybe later
+
+=== rexSkillReminder2 ==============================================
+	~if chara = high_rex
+	~if skill_engineering >= 80
+	~if mem_rexUnlock == 1
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Rex always has some wild, ambitious building project in mind - with your advanced technical knowledge, you could probably help him tackle something really complex.
+
+	* Walk up to Rex
+		~call story(rexRepeat)
+
+	* Maybe later
+
+
+=== vaceSkillReminder1 ==============================================
+	~if chara = high_vace
+	~if skill_combat >= 40
+	~if mem_vaceUnlock == 0
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been working on your combat skills - maybe they're good enough now to take on Vace in a challenge?
+
+	* Walk up to Vace
+		~call story(vaceRepeat)
+
+	* Maybe later
+
+=== vaceSkillReminder2 ==============================================
+	~if chara = high_vace
+	~if skill_combat >= 80
+	~if mem_vaceUnlock == 1
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your combat training has really paid off - you might be skilled enough now to give Vace a real challenge in an advanced competition.
+
+	* Walk up to Vace
+		~call story(vaceRepeat)
+
+	* Maybe later
+
+=== momSkillReminder1 ==============================================
+	~if chara = high_mom
+	~if skill_organization >= 20
+	~if mem_momUnlock == 0
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been getting better at organizing things - your mom might appreciate hearing about what you've learned.
+
+	* Talk to mom
+		~call story(momRepeat)
+
+	* Maybe later
+
+=== momSkillReminder2 ==============================================
+	~if chara = high_mom
+	~if skill_organization >= 40
+	~if mem_momUnlock == 1
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your organizational skills have really improved - you could probably impress your mom with some of the efficiency techniques you've picked up.
+
+	* Talk to mom
+		~call story(momRepeat)
+
+	* Maybe later
+
+=== momSkillReminder3 ==============================================
+	~if chara = high_mom
+	~if skill_organization >= 80
+	~if mem_momUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've become quite the organizational expert - your mom would definitely want to hear about the complex projects you've been tackling.
+
+	* Talk to mom
+		~call story(momRepeat)
+
+	* Maybe later
+
+=== dadSkillReminder1 ==============================================
+	~if chara = high_dad
+	~if skill_animals >= 20
+	~if mem_dadUnlock == 0
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've been learning a lot about animals - your dad could probably use some help with some of the animals in Geoponics.
+
+	* Help dad out
+		~call story(dadRepeat)
+
+	* Maybe later
+
+=== dadSkillReminder2 ==============================================
+	~if chara = high_dad
+	~if skill_animals >= 40
+	~if mem_dadUnlock == 1
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	Your knowledge of animal behavior has grown considerably - your dad might have some more challenging animal care tasks you could assist with.
+
+	* Help dad out
+		~call story(dadRepeat)
+
+	* Maybe later
+
+=== dadSkillReminder3 ==============================================
+	~if chara = high_dad
+	~if skill_animals >= 80
+	~if mem_dadUnlock == 2
+	~if once
+
+	~call preventSeenSkip
+	
+	~set charas = none
+
+	You've become quite skilled with animals - your dad might need help with some advanced animal research he's been working on.
+
+	* Help dad out
+		~call story(dadRepeat)
+
+	* Maybe later
+

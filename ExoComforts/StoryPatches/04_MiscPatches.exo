@@ -1,0 +1,270 @@
+@replace|nearbySymWarn|* "Why not?"|> leave|0|0
+{
+		// original part from here removed, to be moved on top of the dialogue, to make it flow better
+}
+
+@insert|nearbySymWarn|* Ignore him and move on quickly|0
+{
+	* "Why not?"
+		// first time today - this is a comment from the game, but game had the condition backwards? So we change it!
+		~if !story_nearbySymWarn
+		You start to ask why, but he's disappeared again over the edge of the mushroom cap. You shout, but there's no answer. You can't even figure out a way to get up there. Can this guy fly?
+		
+		-
+
+		~set mem_symSaved++
+		~setif mem_symSaved == 1 ? card = stranger
+		~setif mem_symSaved == 2 ? card = stranger2
+		~setif mem_symSaved >= 3 ? card = stranger3
+		Or was it just a mirage? You think you might be seeing things...
+	
+		** Ignore his advice and continue
+			~if !mem_slapgrass
+			> slapFirst
+			
+		** Ignore his advice and continue
+			~if mem_slapgrass
+			> slapAgain
+			
+		** Find another way
+			> leave
+
+}
+
+// Dys is speaking in normal NPC color, but he should be using his own color
+@insert|artifactsBoss3Pyramid|All the same, you feel absolutely compelled to continue|0
+{
+	~setif !mem_dead_dys ? speaker = dys
+}
+
+// This tenchincally works, but I like things looking neat and tidy
+@replace|artifactsBoss3Pyramid|*=leave||0|0
+{
+	*= leave
+}
+
+// Fix Vace trying to speak like a normal NPC instead of using his own color
+@replace|huntUltimate3|~set charas = none||0|0
+{
+	~set charas = none
+	~set speaker = vace
+
+}
+
+@insert|huntUltimate4|A now-familiar silhouette|0
+{
+	~set speaker = vace
+
+}
+
+@insert|vace8Past|"You think you can come around here whenever you want, huh?"|0
+{
+	~set speaker = vace
+
+}
+
+// Fix Rex talking in Marz's color instead of his own
+@insert|rex10Ultimate|"Yes! Great idea!"|0
+{
+			~set speaker = rex
+
+}
+
+@insert|rex4Hugs|You're looking|0
+{
+			~set speaker = rex
+
+}
+
+// Fix Utopia talking in Dys's color
+@insert|artifactsDysRunaway|It's far too early to return|0
+{
+			~set speaker = utopia
+
+}
+
+// Fix Anne talking in Cal's color
+@insert|cookingUltimate|~set card = ultimate_cooking|0
+{
+			~set speaker = anne
+
+}
+
+// Fix Dys talking in generic NPC color
+@insert|sneakStartDysBoss|Just a few minutes away|0
+{
+		~set speaker = dys
+
+}
+
+// Idk why I do this, OCD?
+@replace|surveyQuestFarming|~set hog_bouncesweasels||0|0
+{
+	~set hog_bounceweasels = true
+}
+
+// Vace missing on screen during Tammy's party event
+@insert|tammy10Ultimate|~set speaker = vace|0
+{
+			~set left = vace
+}
+
+@replace|vace1Vain|~set speaker = sol||0|0
+{
+			~set speaker = vace
+}
+
+// Tammy talking in generic NPC color
+@insert|quartersTammyBaby|Tammy brightens|0
+{
+			~set speaker = tammy
+
+}
+
+@insert|quartersTammyBaby|Tammy's shoulders relax|0
+{
+			~set speaker = tammy
+
+}
+
+@insert|tammy9MotherhoodBrave|Tammy blushes and looks away|0
+{
+			~set speaker = tammy
+
+}
+
+@insert|tammy9MotherhoodBrave|Tammy frowns. "I'm not going to be a teenager forever|0
+{
+			~set speaker = tammy
+
+}
+
+@insert|tammy9MotherhoodBrave|Tammy laughs a little|0
+{
+			~set speaker = tammy
+
+}
+
+@insert|tammy9MotherhoodBrave|Tammy smiles shyly and ducks her head|0
+{
+			~set speaker = tammy
+
+}
+
+@insert|tammy9MotherhoodBrave|Tammy smiles fondly at you|0
+{
+			~set speaker = tammy
+
+}
+
+@insert|tammy10Ultimate|Tammy takes Echinacea back from Nougat|0
+{
+		~set speaker = tammy
+
+}
+
+@insert|main_tammyDie|~call cheevo(save_tammy)|0
+{
+		~set speaker = tammy
+
+}
+
+// Fix Marz talking in generic NPC color
+@insert|marzLeader|Marz waves away the holoscreen|0
+{
+	~set speaker = marz
+
+}
+
+@insert|marz10Ultimate|You're surprised|0
+{
+	~set speaker = marz
+
+}
+
+// Change some sprites on the map to match the events
+// it would be nice to have Dys sprite here instead of bushbub for clarity (to show that it's not a regular bushbub event)
+@replace|surveyDysBushbubs|~set sprite = bushbub||0|0
+{
+	~set sprite = dys
+}
+
+// Same idea as with surveyDysBushbubs, we want to replace the sprite here too
+// But Dys can be 'dead' during this event, so surprise, you may have two Syms on the map!
+@replace|artifactsDysSym|~set sprite = fog||0|0
+{
+	~set sprite = sym
+}
+
+/** Bestiary fixes, credit goes to Skypher from EEC Discord for the original idea/solution */
+@insert|expeditions|** Airsquid|0
+{
+        An info window pops up on your holopalm when you get closer. What do you want to know about?
+
+        -
+
+        = bestiaryinner
+
+}
+
+@insert|expeditions|~if mem_xeno_airsquid|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_balneal|0
+{
+            ~set left = none
+}
+
+// Actually has a sprite
+@insert|expeditions|~if mem_xeno_bounceweasel|0
+{
+            ~set left = bounceweasel
+}
+
+// Same as above
+@insert|expeditions|~if mem_xeno_bushbub|0
+{
+            ~set left = bushbub
+}
+
+@insert|expeditions|~if mem_xeno_dorbsmoth|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_eyebeast|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_liarflower|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_muckwalker|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_squeedger|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_snapbladder|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_sugarbug|0
+{
+            ~set left = none
+}
+
+@insert|expeditions|~if mem_xeno_sunbaskers|0
+{
+            ~set left = none
+}

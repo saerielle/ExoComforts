@@ -1,0 +1,260 @@
+// Maybe this could have been done by removing ~if random, but this is easier to read
+/******************************************************************************* }*/
+/** Anemone ***********************************************************************/
+/******************************************************************************* {*/
+@replace|date_anemone|* You sneak off to the quarters...|~if random|0|0
+{
+	* You sneak off to the quarters...
+}
+
+@replace|date_anemone|* You head to the canteen...|~if random|0|0
+{
+	* You head to the canteen...
+}
+
+@replace|date_anemone|* She seems tired...|~if random|0|0
+{
+	* She seems tired...
+}
+
+@replace|date_anemone|* You hang out in the lounge...|~if random|0|0
+{
+	* You hang out in the lounge...
+}
+
+@replace|date_anemone|* She brings you up to the walls...|~if random|0|0
+{
+	* She brings you up to the walls...
+}
+
+@replace|date_anemone|* You avoid Vace...|~if random|0|0
+{
+	* You avoid Vace...
+}
+
+/******************************************************************************* }*/
+/** Cal **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_cal|* You walk in the garden...|~if random|0|0
+{
+	* You walk in the garden...
+}
+
+@replace|date_cal|* He knows a good spot...|~if random|0|0
+{
+	* He knows a good spot...
+}
+
+@replace|date_cal|* You grab a bite to eat...|~if random|0|0
+{
+	* You grab a bite to eat...
+}
+
+@replace|date_cal|* Back to your quarters...|~if random|0|0
+{
+	* Back to your quarters...
+}
+
+/******************************************************************************* }*/
+/** Dys ***************************************************************************/
+/******************************************************************************* {*/
+@replace|date_dys|* You go for a hike...|~if random|0|0
+{
+	* You go for a hike...
+}
+
+@replace|date_dys|* You head out the gates...|~if random|0|0
+{
+	* You head out the gates...
+}
+
+@replace|date_dys|* He shows you a special spot...|~if random|0|0
+{
+	* He shows you a special spot...
+}
+
+@replace|date_dys|* You follow him to the transports...|~if random|0|0
+{
+	* You follow him to the transports...
+}
+
+/******************************************************************************* }*/
+/** Marz **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_marz|* You follow her...|~if random|0|0
+{
+	* You follow her...
+}
+
+@replace|date_marz|* You watch a holovid...|~if random|0|0
+{
+	* You watch a holovid...
+}
+
+@replace|date_marz|* You have dinner...|~if random|0|0
+{
+	* You have dinner...
+}
+
+@replace|date_marz|* You walk on the walls...|~if random|0|0
+{
+	* You walk on the walls...
+}
+
+@replace|date_marz|* Rex joins the two of you...|~if random|0|0
+{
+	* Rex joins the two of you...
+}
+
+@replace|date_marz|* You try to get away from her duties...|~if random|0|0
+{
+	* You try to get away from her duties...
+}
+
+/******************************************************************************* }*/
+/** Nomi **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_nomi|* You watch some holoshows...|~if random|0|0
+{
+	* You watch some holoshows...
+}
+
+@replace|date_nomi|* You dance together...|~if random|0|0
+{
+	* You dance together...
+}
+
+@replace|date_nomi|* You play some games...|~if random|0|0
+{
+	* You play some games...
+}
+
+@replace|date_nomi|* You become their muse...|~if random|0|0
+{
+	* You become their muse...
+}
+
+/******************************************************************************* }*/
+/** Rex **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_rex|* You head back to his place...|~if random|0|0
+{
+	* You head back to his place...
+}
+
+@replace|date_rex|* You head up to the roof...|~if random|0|0
+{
+	* You head up to the roof...
+}
+
+@replace|date_rex|* You take him for a walk...|~if random|0|0
+{
+	* You take him for a walk...
+}
+
+@replace|date_rex|* You find a secret place...|~if random|0|0
+{
+	* You find a secret place...
+}
+
+@replace|date_rex|* You head to the bar...|~if random|0|0
+{
+	* You head to the bar...
+}
+
+/******************************************************************************* }*/
+/** Sym **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_sym|* You take a walk...|~if random|0|0
+{
+	* You take a walk...
+}
+
+@replace|date_sym|* You have a traditional human date...|~if random|0|0
+{
+	* You have a traditional human date...
+}
+
+@replace|date_sym|* The forest changes...|~if random|0|0
+{
+	* The forest changes...
+}
+
+@replace|date_sym|* You explore a dark place...|~if random|0|0
+{
+	* You explore a dark place...
+}
+
+@replace|date_sym|* He eases your tension...|~if random|0|0
+{
+	* He eases your tension...
+}
+
+/******************************************************************************* }*/
+/** Tammy **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_tammy|* You just relax...|~if random|0|0
+{
+	* You just relax...
+}
+
+@replace|date_tammy|* You find a babysitter...|~if random|0|0
+{
+	* You find a babysitter...
+}
+
+@replace|date_tammy|* You go for a walk...|~if random|0|0
+{
+	* You go for a walk...
+}
+
+@replace|date_tammy|* You take a day off...|~if random|0|0
+{
+	* You take a day off...
+}
+
+@replace|date_tammy|* You take a nap...|~if random|0|0
+{
+	* You take a nap...
+}
+
+/******************************************************************************* }*/
+/** Tang **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_tang|* You hang out in the lab...|~if random|0|0
+{
+	* You hang out in the lab...
+}
+
+@replace|date_tang|* You meander toward your quarters...|~if random|0|0
+{
+	* You meander toward your quarters...
+}
+
+@replace|date_tang|* You go for a walk...|~if random|0|0
+{
+	* You go for a walk...
+}
+
+/******************************************************************************* }*/
+/** Vace **************************************************************************/
+/******************************************************************************* {*/
+@replace|date_vace|* The two of you blow off some steam...|~if random|0|0
+{
+	* The two of you blow off some steam...
+}
+
+@replace|date_vace|* You head up to the walls...|~if random|0|0
+{
+	* You head up to the walls...
+}
+
+@replace|date_vace|* You relax in the garrison...|~if random|0|0
+{
+	* You relax in the garrison...
+}
+
+@replace|date_vace|* He takes you to a Helio hideout...|~if random|0|0
+{
+	* He takes you to a Helio hideout...
+}

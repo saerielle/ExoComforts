@@ -1,0 +1,26 @@
+@replace|gameStartIntro|*= introFirstFire||0|0
+{
+		*= introFirstFire
+			Sometimes it feels like you have seen this _exact_ dream so many times before. 
+			
+			You know it always ends the same way. 
+			
+			** Concentrate on the dream
+				> introFirstFire2
+			
+			** Concentrate on the present
+				~call fancyMode(true)
+				~set bg = intro_titles
+
+				You wake up.
+
+				-
+
+				~call delayText(2)
+				~call clearText
+
+				**** [hidden]
+					> titles
+
+		*= introFirstFire2
+}
