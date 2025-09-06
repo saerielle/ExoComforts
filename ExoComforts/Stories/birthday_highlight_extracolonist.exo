@@ -370,32 +370,32 @@
 
     You kinda wish you could gift Peri an investigation worthy of his skills, but you will have to settle for what you have in your pockets... and improvise.
 
-	// // Likes conditions - content to be added when preferences are finalized - while Peri has them defined, their reactions are the same for all gifts, so it's hard to write proper flavor text
-	// [if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_glowshell && hog_fact_peri_likes_bristleslugjerky]
-
+	// Likes conditions - content to be added when preferences are finalized - while Peri has them defined, their reactions are the same for all gifts, so it's hard to write proper flavor text
+	[if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_glowshell && hog_fact_peri_likes_bristleslugjerky]
+		You know Peri reacts the same way to any gift you give them, but your deductive skills are telling you they would be excited about Sacchi's Commendation, Glowing Shell or Bristleslug Jerky.
         
-	// [else if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_glowshell]
-
+	[else if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_glowshell]
+		You know Peri reacts the same way to any gift you give them, but your deductive skills are telling you they would be excited about Sacchi's Commendation or Glowing Shell.
         
-	// [else if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_bristleslugjerky]
-
+	[else if hog_fact_peri_likes_sacchi_comm && hog_fact_peri_likes_bristleslugjerky]
+		You know Peri reacts the same way to any gift you give them, but your deductive skills are telling you they would be excited about Sacchi's Commendation or Bristleslug Jerky.
         
-	// [else if hog_fact_peri_likes_glowshell && hog_fact_peri_likes_bristleslugjerky]
-
+	[else if hog_fact_peri_likes_glowshell && hog_fact_peri_likes_bristleslugjerky]
+		You know Peri reacts the same way to any gift you give them, but your deductive skills are telling you they would be excited about Glowing Shell or Bristleslug Jerky.
         
-	// [else if hog_fact_peri_likes_sacchi_comm]
+	[else if hog_fact_peri_likes_sacchi_comm]
+		You know Peri reacts the same way to any gift you give them, but your deductive skills are telling you they would be excited about Sacchi's Commendation.
 
+	[else if hog_fact_peri_likes_glowshell]
+		You know Peri reacts the same way to any gift you give them, but your deductive skills are telling you they would be excited about Glowing Shell.
         
-	// [else if hog_fact_peri_likes_glowshell]
-
+	[else if hog_fact_peri_likes_bristleslugjerky]
+		You know Peri reacts the same way to any gift you give them, but your deductive skills are telling you they would be excited about Bristleslug Jerky.
         
-	// [else if hog_fact_peri_likes_bristleslugjerky]
-
+	[else]
+		You're not sure what Peri would want, but knowing their energetic personality, probably something fun or exciting. Maybe Cake - most people like that.
         
-	// [else]
-
-        
-	// [end]
+	[end]
 
 	// [if hog_fact_peri_dislikes_egg && hog_fact_peri_dislikes_soyshake]
 
